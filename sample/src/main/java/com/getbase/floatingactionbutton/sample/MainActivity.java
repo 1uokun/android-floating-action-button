@@ -4,6 +4,7 @@ import com.getbase.floatingactionbutton.FloatingActionButton;
 import com.getbase.floatingactionbutton.FloatingActionsMenu;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.graphics.drawable.ShapeDrawable;
 import android.graphics.drawable.shapes.OvalShape;
 import android.os.Bundle;
@@ -86,5 +87,10 @@ public class MainActivity extends Activity {
     rightLabels.addButton(addedTwice);
     rightLabels.removeButton(addedTwice);
     rightLabels.addButton(addedTwice);
+
+    View view = View.inflate(this, R.layout.button, null);
+    rightLabels.addButton(view);
+    rightLabels.setColorNormal(Color.parseColor("#000000"));
+    rightLabels.setColorPressed(Color.parseColor("#999999"));
   }
 }

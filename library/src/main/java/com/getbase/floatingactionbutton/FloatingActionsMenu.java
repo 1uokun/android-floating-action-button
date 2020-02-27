@@ -144,6 +144,34 @@ public class FloatingActionsMenu extends ViewGroup {
     }
   }
 
+  public void setPlusColor(int color) {
+    if (mAddButtonPlusColor != color) {
+      mAddButtonPlusColor = color;
+      mAddButton.updateBackground();
+    }
+  }
+
+  public void setColorNormal(int color) {
+    if (mAddButtonColorNormal != color) {
+      mAddButtonColorNormal = color;
+      mAddButton.updateBackground();
+    }
+  }
+
+  public void setColorPressed(int color) {
+    if (mAddButtonColorPressed != color) {
+      mAddButtonColorPressed = color;
+      mAddButton.updateBackground();
+    }
+  }
+
+  public void setStrokeVisible(boolean bool) {
+    if (mAddButtonStrokeVisible != bool) {
+      mAddButtonStrokeVisible = bool;
+      mAddButton.updateBackground();
+    }
+  }
+
   private void createAddButton(Context context) {
     mAddButton = new AddFloatingActionButton(context) {
       @Override
@@ -195,6 +223,11 @@ public class FloatingActionsMenu extends ViewGroup {
     if (mLabelsStyle != 0) {
       createLabels();
     }
+  }
+
+  public void addButton(View button) {
+    addView(button, mButtonsCount - 1);
+    mButtonsCount++;
   }
 
   public void removeButton(FloatingActionButton button) {
